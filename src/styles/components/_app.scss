@@ -1,0 +1,47 @@
+body {
+    min-height: 100vh;
+    background: radial-gradient(ellipse at 0vw 100vh, rgba($background-color,1) 0%, rgba(0,0,0,0) 100%);
+    background-size: 200%;
+    animation: background-shift-one 5s ease infinite;
+    margin-bottom: 14rem;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: 50%;
+    height: 100%;
+    background: radial-gradient(ellipse at bottom right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%);
+}
+
+.container {
+    max-width: 60rem;
+    margin: 18rem auto 0 auto;
+}
+
+@keyframes background-shift-one {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 200%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }  
+}
+
+@keyframes background-shift-two {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 200%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }  
+} 

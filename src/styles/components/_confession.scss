@@ -1,0 +1,92 @@
+.confession {
+    display: flex;
+    flex-direction: column;
+    font-size: $font-small;
+    margin-top: 5rem;
+}
+
+.confession--title {
+    margin-bottom: 1rem;
+}
+
+.confession--text {
+    margin-bottom: 1rem;
+}
+
+.confession--text::before {
+    content:"“";
+    position: relative;
+    top: 3rem;
+    font-size: $font-large;
+    line-height: 1rem;
+    padding-right: 1rem;
+}
+
+.confession--text::after {
+    content:"”";
+    position: relative;
+    top: 4rem;
+    left: 1rem;
+    font-size: $font-large;
+    line-height: 0rem;
+}
+
+.confession--button-container {
+    position: relative;
+    align-self: flex-end;
+}
+
+.confession--button {
+    background: $button-two;
+    font-family: roboto;
+    font-size: $font-small-normal;
+    cursor: pointer;
+    border: none;
+}
+
+.confession--button__forgive {
+    padding: .5rem 4rem 2rem 1.8rem;
+    // dimensions are explicit for clipping tricks
+    width: 142px;
+    height: 50px;
+    clip-path: polygon(0 0, 142px 0, 120px 50px, 0 50px);
+    margin-right: -1rem;
+}
+
+.confession--button-container::after {
+    // this functions as border for forgive button
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    z-index: -1;
+    background: #fff;
+    width: 144px;
+    height: 52px;
+    clip-path: polygon(0 0, 144px 0, 122px 52px, 0 52px);
+}
+
+.confession--button__not {
+    width: 80px;
+    height: 50px;
+    padding: .5rem 1.5rem 1rem 2.2rem;
+    clip-path: polygon(22px 0, 80px 0, 80px 50px, 0 50px);
+}
+
+.confession--button-container::before {
+    // this functions as border for not button
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    z-index: -1;
+    background: #fff;
+    width: 82px;
+    height: 52px;
+    clip-path: polygon(22px 0, 82px 0, 82px 52px, 0 52px);
+}
+
+.confession--button:hover {
+    color: $button-two;
+    background: $text-color;
+}

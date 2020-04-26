@@ -1,0 +1,11 @@
+.confession--list {
+    margin: 5rem 0;
+}
+
+.confession--list::before {
+    content: "";
+    display: block;
+    width: 50%;
+    border-top: 3px solid $background-color;
+    margin: 5rem auto;
+}
