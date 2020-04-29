@@ -5,13 +5,19 @@ import { Provider } from 'react-redux';
 
 import App from './components/App';
 import configureStore from './store/configureStore';
-import { setConfessions } from './actions/confessions';
+import { setConfessions, addConfession } from './actions/confessions';
 import confessions from './test-data/fixtures';  // just for testing
 
 const store = configureStore(); // here reducers are set
 
 // let's set some confessions for now; this will be relaced with a database call
 store.dispatch(setConfessions(confessions));
+
+// just as a tryout
+store.dispatch(addConfession({
+  title: "This is from addConfession",
+  body: "Fingers crossed."
+}))
 
 ReactDOM.render(
   <React.StrictMode>

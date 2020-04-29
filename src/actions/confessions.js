@@ -5,3 +5,10 @@ export const setConfessions = (confessions) => {
         confessions
     }
 }
+
+export const addConfession = (confession) => {
+    return {
+        type: 'ADD_CONFESSION',
+        confession
+    }
+}

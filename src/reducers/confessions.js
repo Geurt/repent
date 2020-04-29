@@ -6,8 +6,7 @@ const confessionsReducer = (state = confessionsReducerDefaultState, action) =>  
             // just for now
             return action.confessions;
         case 'ADD_CONFESSION':
-            // just for now
-            return state;
+            return [action.confession, ...state];
         default:
             return state;
     }
