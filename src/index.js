@@ -1,11 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
 import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux';
+
+import App from './components/App';
+import configureStore from './store/configureStore';
+import { setConfessions } from './actions/confessions';
+import confessions from './test-data/fixtures';  // just for testing
+
+const store = configureStore(); // here reducers are set
+
+// let's set some confessions for now; this will be relaced with a database call
+store.dispatch(setConfessions(confessions));
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

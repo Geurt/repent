@@ -1,14 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Confession from './Confession';
 
-const ConfessionList = () => {
+const ConfessionList = (props) => {
     return (
         <div className="confession--list">
-            <Confession />
-            <Confession />
-            <Confession />
+            { props.confessions.map((confession, i) => <Confession key={i} title={confession.title} body={confession.body} />) }
         </div>
     )
 }
 
-export default ConfessionList;
+const mapStateToProps = (state) => {
+    return {
+        // for now just return the state as confessions
+        confessions: state
+    }
+}
+
+export default connect(mapStateToProps)(ConfessionList);
