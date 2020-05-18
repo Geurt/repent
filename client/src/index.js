@@ -6,9 +6,12 @@ import { Provider } from 'react-redux';
 import App from './components/App';
 import configureStore from './store/configureStore';
 import { setConfessions, addConfession } from './actions/confessions';
-import confessions from './test-data/fixtures';  // just for testing
 
 const store = configureStore(); // here reducers are set
+
+//import confessions from './test-data/fixtures';  // just for testing
+// just for now; awaiting backend
+const confessions = undefined;
 
 // let's set some confessions for now; this will be relaced with a database call
 store.dispatch(setConfessions(confessions));
