@@ -1,6 +1,10 @@
 import express from 'express';
 import cors from 'cors';
-const path = require('path');
+import path from 'path';
+import dotenv from 'dotenv';
+dotenv.config();
+
+import { conenctDb, connectDb } from './models/index';
 
 const port = process.env.PORT || 5000;
 const app = express();
@@ -23,6 +27,10 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
-app.listen(port, () => {
-    console.log(`The server is listening on port: ${port}`);
+// connect to db and start server
+connectDb().then(async () => {
+    app.listen(port, () => {
+        console.log(`The server is listening on port: ${port}`);
+    });
 });
+

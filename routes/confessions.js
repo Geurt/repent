@@ -1,22 +1,24 @@
 import { Router } from 'express';
-import confessions from '../test-data/fixtures';
+import Confession from '../models/confession.model';
 
 const router = Router();
 
 // we only define the subpath here; the resource path confessions/ will be added as middleware in app entry
-router.get('/', (req, res) => {
-    // get data from mongo
-    // for now:
+router.get('/', async (req, res) => {
+    // get data from mongo   
+    const confessions = await Confession.find({});
+
     return res.send(confessions);
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
     // post data to mongo
-    // for now:
-    return res.send({
+    const confession = await Confession.create({
         title: req.body.title,
         confession: req.body.confession
     });
+
+    return res.send(confession);
 });
 
 export default router;
