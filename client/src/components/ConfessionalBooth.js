@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addConfession } from '../actions/confessions';
+import { postConfession } from '../actions/confessions';
 
 export class ConfessionalBooth extends React.Component {
     constructor(props) {
@@ -18,18 +18,16 @@ export class ConfessionalBooth extends React.Component {
     onSubmit = (e) => {
         e.preventDefault();
         // for now I just take the first few words as a title:
-        console.log('confession: ',this.state.confession);
-        const firstWords = this.state.confession
+        const title = this.state.confession
                             .split(' ')                 // split in words
                             .slice(0,4)                 // take the first few words
-                            .map((word) => word + ' '); // add spaces
-        // let's remove last space and add elipses
-        firstWords[firstWords.length - 1] = firstWords[firstWords.length - 1].replace(' ', '...');
-        // ...and jsx will render the array as text anyhow.
+                            .join(' ')                  // make a string again
+                            .concat('...');             // add ellipses
 
-        this.props.addConfession({
-            title: firstWords,
-            body: this.state.confession
+        // api call
+        this.props.postConfession({
+            title,
+            confession: this.state.confession
         });
     }
 
@@ -49,7 +47,7 @@ export class ConfessionalBooth extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    addConfession: (confession) => dispatch(addConfession(confession))
+    postConfession: (confession) => dispatch(postConfession(confession))
 })
 
 export default connect(undefined, mapDispatchToProps)(ConfessionalBooth);
