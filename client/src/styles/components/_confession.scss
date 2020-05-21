@@ -31,9 +31,45 @@
     line-height: 0rem;
 }
 
+.confession--forgiveness-container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.confession--forgiveness-counter {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+.confession--forgiveness-counter::before {
+    content: "";
+    flex-grow: 1;
+    height: 0;
+    align-self: center;
+    border-bottom: 2px solid #000;
+    margin: 0 1rem 0 0;
+}
+.confession--forgiveness-counter::after {
+    content: "";
+    flex-grow: 1;
+    height: 0;
+    align-self: center;
+    border-bottom: 2px solid #000;
+    margin: 0 1rem 0 1rem;
+}
+
+.confession--forgiveness_counter_separator {
+    margin: 0 1rem;
+}
+
+.confession--forgiveness_counter-active {
+    color: #fff
+}
+
 .confession--button-container {
     position: relative;
-    align-self: flex-end;
+    flex-grow: 0;
 }
 
 .confession--button {

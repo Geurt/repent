@@ -12,7 +12,11 @@ export class ConfessionList extends React.Component {
     render() {
         return (
             <div className="confession--list">
-                {this.props.confessions.map((confession, i) => <Confession key={i} title={confession.title} body={confession.confession} />)}
+                {this.props.confessions.map((confession, i) => 
+                    <Confession 
+                        key={i}
+                        confession={confession}
+                    />)}
             </div>
         )
     }

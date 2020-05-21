@@ -42,6 +42,48 @@ export const postConfession = (confession = {}) => {
     }
 }
 
+export const postForgiveConfession = (confession) => {
+    // (in the backend updates are restricted)
+    const newForgivenCount = confession.forgivenCount + 1;
+
+    return (dispatch) => {
+        fetch(`./confessions/${confession._id}`, {
+            method: 'put',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ newForgivenCount })
+        })
+        .then(handleErrors)
+        .then(res => res.json())
+        .then((json) => dispatch(updateConfession(confession, json)))
+        .catch(error => {
+            // TODO: handle errors with a failure action
+        });
+    }
+}
+
+export const postUnforgiveConfession = (confession) => {
+    // (in the backend updates are restricted)
+    const newUnforgivenCount = confession.unforgivenCount + 1;
+
+    return (dispatch) => {
+        fetch(`./confessions/${confession._id}`, {
+            method: 'put',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ newUnforgivenCount })
+        })
+        .then(handleErrors)
+        .then(res => res.json())
+        .then((json) => dispatch(updateConfession(confession, json)))
+        .catch(error => {
+            // TODO: handle errors with a failure action
+        });
+    }
+}
+
 // error handler for fetch calls
 const handleErrors = (response) => {
     if (!response.ok) {
@@ -63,5 +105,13 @@ export const addConfession = (confession) => {
     return {
         type: 'ADD_CONFESSION',
         confession
+    }
+}
+
+export const updateConfession = (confession, updatedConfession) => {
+    return {
+        type: 'UPDATE_CONFESSION',
+        confession,
+        updatedConfession
     }
 }

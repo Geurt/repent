@@ -10,6 +10,12 @@ const confessionSchema = new Schema({
     confession: {
         type: String,
         required: [true, 'The confession field is required']
+    },
+    forgivenCount: {
+        type: Number
+    },
+    unforgivenCount: {
+        type: Number
     }
 });
 
