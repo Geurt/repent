@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Confession from './Confession';
 import { fetchConfessions } from '../actions/confessions';
+import confessionsSelector from '../selectors/confessions';
 
 export class ConfessionList extends React.Component {
     componentDidMount() {        
@@ -25,8 +26,7 @@ export class ConfessionList extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        // for now just return the state as confessions
-        confessions: state
+        confessions: confessionsSelector(state.confessions, state.filter)
     }
 }
 

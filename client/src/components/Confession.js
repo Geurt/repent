@@ -19,12 +19,12 @@ export class Confession extends React.Component {
                 <div className="confession--forgiveness-container">            
                     <div className="confession--forgiveness-counter">
                         <span className={this.props.confession.forgivenCount > this.props.confession.unforgivenCount ? 'confession--forgiveness_counter-active' : 'confession--forgiveness_counter-inactive'}>
-                            forgiven
-                        </span>: {this.props.confession.forgivenCount}
+                            forgiven </span>
+                        by {this.props.confession.forgivenCount}
                         <span className="confession--forgiveness_counter_separator">/</span> 
                         <span className={this.props.confession.forgivenCount < this.props.confession.unforgivenCount ? 'confession--forgiveness_counter-active' : 'confession--forgiveness_counter-inactive'}>
-                            unforgiven
-                        </span>: {this.props.confession.unforgivenCount}</div>
+                            unforgiven </span> 
+                        by {this.props.confession.unforgivenCount}</div>
                     <div className="confession--button-container">
                         <button className="confession--button confession--button__forgive" onClick={this.onForgive}>forgive</button>
                         <button className="confession--button confession--button__not" onClick={this.onUnforgive}>not</button>

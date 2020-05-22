@@ -1,9 +1,10 @@
 import React from 'react';
 import '../styles/main.scss';
 
-import ConfessionList from './ConfessionList';
-import ConfessionalBooth from './ConfessionalBooth';
 import Header from './Header';
+import ConfessionalBooth from './ConfessionalBooth';
+import ConfessionsFilter from './ConfessionsFilter';
+import ConfessionList from './ConfessionList';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Header />
       <div className="container">
         <ConfessionalBooth />
+        <ConfessionsFilter />
         <ConfessionList />
       </div>
     </>

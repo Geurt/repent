@@ -7,7 +7,6 @@ const router = Router();
 router.get('/', async (req, res) => {
     // get data from mongo   
     const confessions = await Confession.find({});
-
     return res.send(confessions);
 });
 
@@ -43,6 +42,5 @@ router.put('/:confessionId', async (req, res) => {
 
     return res.send(updatedConfession);
 });
-
 
 export default router;

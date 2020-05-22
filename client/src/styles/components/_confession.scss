@@ -64,7 +64,12 @@
 }
 
 .confession--forgiveness_counter-active {
-    color: #fff
+    white-space: pre;    
+    color: $light-grey;
+}
+
+.confession--forgiveness_counter-inactive {
+    white-space: pre;
 }
 
 .confession--button-container {

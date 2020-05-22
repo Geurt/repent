@@ -1,0 +1,42 @@
+.confessions-filter {
+    position: relative;
+    display: flex;
+    width: 75%;
+    align-items: center;
+    margin: 7rem auto 0rem auto;
+}
+
+.confessions-filter::before {
+    content: "";
+    flex-grow: 1;
+    border-bottom: 4px solid #000;
+}
+
+.confessions-filter__button {
+    flex-grow: 0;
+    position: relative;
+    
+    font-size: $font-small;
+    font-family: 'roboto';
+    font-style: normal;
+    
+    background: transparent;
+    border: 1px solid #000;
+    padding: .5rem 1rem;
+    cursor: pointer;
+
+    &:hover {
+        color: #fff;
+    }
+
+    &:last-child {
+        border-left: none;
+    }
+
+    &.active {
+        font-style: italic;
+        color: $light-grey;
+    }
+}
+
+
