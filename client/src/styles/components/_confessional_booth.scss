@@ -10,6 +10,12 @@
     resize: none;
 }
 
+.confessional-booth__text.active {
+    color: #000;
+    font-size: $font-small;
+    resize: none;
+}
+
 .confessional-booth__button {
     vertical-align: middle;
     color: $text-color;
@@ -26,4 +32,10 @@
 .confessional-booth__button:hover {
     color: #000;
     background: #fff;
+}
+
+.confessional-booth__capthca-warning {
+    color: red;
+    font-size: $font-small;
+    margin: 1rem;
 }
