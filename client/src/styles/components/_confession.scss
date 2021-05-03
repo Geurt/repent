@@ -41,6 +41,10 @@
     display: flex;
     justify-content: center;
     flex-grow: 1;
+
+    @include respond(phone) {
+        font-size: 1.4rem;
+    }
 }
 .confession--forgiveness-counter::before {
     content: "";
@@ -86,12 +90,18 @@
 }
 
 .confession--button__forgive {
-    padding: .5rem 4rem 2rem 1.8rem;
     // dimensions are explicit for clipping tricks
     width: 142px;
     height: 50px;
     clip-path: polygon(0 0, 142px 0, 120px 50px, 0 50px);
     margin-right: -1rem;
+
+    @include respond(phone) {
+        width: 72px;
+        height: 25px;
+        clip-path: polygon(0 0, 72px 0, 60px 25px, 0 25px);
+
+    }
 }
 
 .confession--button-container::after {
@@ -105,13 +115,46 @@
     width: 144px;
     height: 52px;
     clip-path: polygon(0 0, 144px 0, 122px 52px, 0 52px);
+
+    @include respond(phone) {
+        width: 74px;
+        height: 27px;
+        clip-path: polygon(0 0, 74px 0, 62px 27px, 0 27px);
+    }
 }
 
 .confession--button__not {
     width: 80px;
     height: 50px;
-    padding: .5rem 1.5rem 1rem 2.2rem;
     clip-path: polygon(22px 0, 80px 0, 80px 50px, 0 50px);
+
+    @include respond(phone) {
+        width: 40px;
+        height: 25px;
+        clip-path: polygon(12px 0, 40px 0, 40px 25px, 0 25px);
+    }
+}
+
+.confession--button-text__forgive {
+    position: relative;
+    top: -2px;
+    left: -4px;
+
+    @include respond(phone) {
+        font-size: 1.5rem;
+        top: -8px;
+    }
+}
+
+.confession--button-text__not {
+    position: relative;
+    top: -2px;
+    left: 4px;
+
+    @include respond(phone) {
+        font-size: 1.5rem;
+        top: -8px;
+    }
 }
 
 .confession--button-container::before {
@@ -125,6 +168,12 @@
     width: 82px;
     height: 52px;
     clip-path: polygon(22px 0, 82px 0, 82px 52px, 0 52px);
+
+    @include respond(phone) {
+        width: 42px;
+        height: 27px;
+        clip-path: polygon(12px 0, 42px 0, 42px 27px, 0 27px);
+    }
 }
 
 .confession--button:hover {

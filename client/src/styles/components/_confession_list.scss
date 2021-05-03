@@ -1,3 +1,7 @@
 .confession--list {
     margin: 5rem 0;
+
+    @include respond(phone) {
+        margin: 5rem 1rem;
+    }
 }

@@ -20,6 +20,10 @@ body::after {
 .container {
     max-width: 60rem;
     margin: 18rem auto 0 auto;
+
+    @include respond(phone) {
+        margin: 10rem auto 0 auto;
+    }
 }
 
 @keyframes background-shift-one {
