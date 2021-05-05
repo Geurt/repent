@@ -1,9 +1,18 @@
 body {
     min-height: 100vh;
-    background: radial-gradient(ellipse at 0vw 100vh, rgba($background-color,1) 0%, rgba(0,0,0,0) 100%);
-    background-size: 200%;
-    animation: background-shift-one 5s ease infinite;
     margin-bottom: 14rem;
+}
+@media (max-width: 1099px) {
+    body {
+        background: grey;
+    }
+}
+@media (min-width: 1100px) {
+    body {
+        background: radial-gradient(ellipse at 0vw 100vh, rgba($background-color,1) 0%, rgba(0,0,0,0) 100%);
+        background-size: 200%;
+        animation: background-shift-one 5s ease infinite;
+    }
 }
 
 body::after {
